@@ -1,3 +1,5 @@
+import org.junit.Test;
+
 import java.util.Formatter;
 
 /**
@@ -81,18 +83,18 @@ public class IntList {
      */
 
     public static IntList dcatenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        IntList L = A;
-        if (A==null) {
 
-            A=B;
+        IntList L = A;
+        if (A == null) {
+
+            A = B;
             return A;
         }
 
         while (L.rest != null) {
             L = L.rest;
         }
-        L.rest=B;
+        L.rest = B;
         return A;
     }
 
@@ -101,19 +103,37 @@ public class IntList {
      * * elements of B.  May NOT modify items of A.  Use 'new'.
      */
     public static IntList catenate(IntList A, IntList B) {
-        //TODO:  fill in method
-        IntList A1=A;
-        IntList L=new IntList(A1.first,null);
-        IntList M=L;
-        A1=A1.rest;
+
+        IntList A1 = A;
+        IntList L = new IntList(A1.first, null);
+        IntList M = L;
+        A1 = A1.rest;
         while (A1 != null) {
-            L.rest=new IntList(A1.first,null);
+            L.rest = new IntList(A1.first, null);
             A1 = A1.rest;
-            L=L.rest;
+            L = L.rest;
         }
-        L.rest=B;
+        L.rest = B;
         return M;
     }
+
+    public static IntList reverse(IntList a) {
+        if (a == null || a.rest == null) {
+            return null;
+        }
+
+        IntList ptr=a.rest;
+        a.rest = null;
+
+        while (ptr!= null){
+            IntList temp=ptr.rest;
+            ptr.rest = a;
+            a = ptr;
+            ptr = temp;
+        }
+        return a;
+    }
+
 
 
 
