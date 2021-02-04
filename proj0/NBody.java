@@ -62,14 +62,6 @@ public class NBody {
 
 
 
-
-
-
-
-
-
-
-
         // Enables double buffering.
         StdDraw.enableDoubleBuffering();
 
