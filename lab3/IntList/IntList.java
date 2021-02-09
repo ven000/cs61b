@@ -124,14 +124,14 @@ public class IntList {
             return a;
         } else {
 
-        IntList ptr=a.rest;
+        IntList ptr = a.rest;
         a.rest = null;
 
-        while (ptr!= null){
-            IntList temp=ptr.rest;
+        while (ptr != null){
+            IntList temp = ptr.rest;
             ptr.rest = a;
             a = ptr;
-            ptr = temp;}
+            ptr = temp; }
 
         return a;
         }
