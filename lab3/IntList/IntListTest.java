@@ -86,8 +86,7 @@ public class IntListTest {
 
         /*if given null input, return null*/
         IntList B = IntList.of();
-        IntList B_exp = IntList.of();
-        assertEquals(B_exp, IntList.reverse(B));
+        assertEquals(B, IntList.reverse(B));
 
 
     }
